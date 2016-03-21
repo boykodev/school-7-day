@@ -12,6 +12,8 @@ module.exports = function routes(app) {
         .delete('/users/:id', require('../controllers/indexController').removeItem)
         .post('/memcached', require("../controllers/MemcachedController").postAction)
         .get('/memcached/:key', require("../controllers/MemcachedController").getAction)
+        .put('/memcached/:key', require("../controllers/MemcachedController").putAction)
+        .delete('/memcached/:key', require("../controllers/MemcachedController").deleteAction)
     ;
 
     app.use(router.middleware());
